@@ -1,0 +1,47 @@
+Hocam merhabalar
+
+Maalesef projeyi tam olarak yetiştiremedim zamanında. Yazılması gereken son bir Google SpeechToText Servisi kaldı. OpenAI'ın SpeechToText'ini kullandım ancak o çok iyi çalışmadı.
+
+Projeyi başlatmak için
+gradle.properties'e size mailden attığım environmental variable'ı direk ekleyin.
+
+Daha sonra clean ve rebuild ettiğinizde uygulamayı normal-medium modda çalıştırabilirsiniz.
+
+Sürüm: Android 7.0
+
+Burada genel olarak MVVM android mimarisini göstermeye çalıştım. Şu anda projede 2 farklı openAI API'ı çalışıyor.
+
+Projenin android, arayüz tarafında create teacher dediğimizde arkada bir teacher nesnesi oluşuyor.
+Daha sonra classrooma gitmek için butona bastığımızda argüman olarak Teacher nesnesi o fragment'e gidiyor. Orada openAI API'sinin ve yazdığım bazı servisler çalışıyor.
+
+Teacher ise yapay zeka modeli ile entegre çalışan bir Data class diyebiliriz.
+
+Kullanıcının sesi Google SpeechToText kütüphanesi ile text'e çevriliyor
+
+Bu text ile bir mesaj oluşturuluyor.
+
+Teacherda bir OpenAI asistanı oluşturuluyor
+
+Teacherda bir OpenAIThread'i oluşturuluyor ( Buradaki Thread kelimesi kullanıcı ve bir yapay zeka modeli ile arasında geçen konuşma sessionu diyebiliriz)
+
+Kullanıcı Texti Mesaj olarak Thread'e ekleniyor
+
+ThreadID ve AssistantID OpenAI.run fonksiyonunu çağırırkent parametre olarak kullanılıyor.
+
+run fonksiyonu Asistanın cevabını text olarak döndürüyor
+
+OpenAI textToSpeech Servisi bunu Sese çeviriyor
+
+ClassRoomModelView bu sesi kullanıcıya dinletiyor
+
+
+Uygulama INTERNET, RECORD gibi bazı izinleri kullanıyor
+
+
+Proje için oldukça zaman ayırdım ve uğraştım ancak beklediğimden de zor ve uzun sürdü
+Umarım genel yapıyı beğenirsiniz 
+
+İsmail Tamer Türker
+2019502174
+
+
