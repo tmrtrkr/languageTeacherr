@@ -1,0 +1,97 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
+
+
+
+}
+
+android {
+    namespace 'com.imaginai.languageteacher'
+    compileSdk 34
+
+    viewBinding {
+        enabled = true
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    defaultConfig {
+        applicationId "com.imaginai.languageteacher"
+        minSdk 23
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        def apiKey = project.findProperty("OPENAI_API_KEY") ?: "default_api_key"
+
+        buildConfigField "String", "OPENAI_API_KEY", "\"${apiKey}\""
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    sourceSets {
+        main {
+            assets {
+                srcDirs 'src\\main\\assets', 'src\\main\\assets\\2'
+            }
+        }
+    }
+}
+
+def nav_version = "2.7.7"
+
+dependencies {
+
+    implementation "com.aallam.openai:openai-client:3.7.2"
+
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
+
+
+    implementation "org.jetbrains.kotlin:kotlin-parcelize-runtime:1.8.10"
+
+    // Ktor dependencies
+    implementation "io.ktor:ktor-client-core:2.0.0"
+    implementation "io.ktor:ktor-client-okhttp:2.0.0"
+    implementation "io.ktor:ktor-client-logging:2.0.0"
+    implementation "io.ktor:ktor-client-plugins:2.0.0"
+
+    def room_version = "2.4.2"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
+    // Kotlin
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

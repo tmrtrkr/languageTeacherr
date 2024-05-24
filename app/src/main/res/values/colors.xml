@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Kırmızı tonları -->
+    <color name="red_light">#FFCDD2</color>
+    <color name="red">#F44336</color>
+    <color name="red_dark">#D32F2F</color>
+
+    <color name="blue_light_trans">#80BBDEFB</color>
+
+    <!-- Mavi tonları -->
+    <color name="blue_light">#BBDEFB</color>
+    <color name="blue">#2196F3</color>
+    <color name="blue_dark">#1976D2</color>
+
+    <!-- Sarı tonları -->
+    <color name="yellow_light">#FFF9C4</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="yellow_dark">#FBC02D</color>
+
+    <!-- Yeşil tonları -->
+    <color name="green_light">#C8E6C9</color>
+    <color name="green">#4CAF50</color>
+    <color name="green_dark">#388E3C</color>
+
+    <!-- Mor tonları -->
+    <color name="purple_light">#E1BEE7</color>
+    <color name="purple">#9C27B0</color>
+    <color name="purple_dark">#7B1FA2</color>
+
+    <!-- Siyah tonları -->
+    <color name="black_light">#484848</color> <!-- Orta gri olarak tanımlandı -->
+    <color name="black">#000000</color>
+    <color name="black_dark">#000000</color>
+
+    <!-- Beyaz tonları -->
+    <color name="white_light">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_dark">#E0E0E0</color> <!-- Açık gri olarak tanımlandı -->
+
+    <!-- Kahverengi tonları -->
+    <color name="brown_light">#D7CCC8</color>
+    <color name="brown">#795548</color>
+    <color name="brown_dark">#5D4037</color>
+
+    <!-- Turuncu tonları -->
+    <color name="orange_light">#FFE0B2</color>
+    <color name="orange">#FF9800</color>
+    <color name="orange_dark">#F57C00</color>
+
+    <!-- Tema renkleri -->
+    <color name="colorPrimary">#121212</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#BB86FC</color>
+</resources>

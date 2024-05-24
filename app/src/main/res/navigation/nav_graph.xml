@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/teacher_list">
+
+    <fragment
+        android:id="@+id/teacher_list"
+        android:name="com.imaginai.languageteacher.View.teacher_list"
+        android:label="teacher_list" >
+        <action
+            android:id="@+id/action_teacher_list_to_classRoom2_withTeacher"
+            app:destination="@id/classRoom" />
+    </fragment>
+    <fragment
+        android:id="@+id/classRoom"
+        android:name="com.imaginai.languageteacher.View.ClassRoom"
+        android:label="fragment_class_room"
+        tools:layout="@layout/fragment_class_room" >
+        <action
+            android:id="@+id/action_classRoom_to_teacher_list_back"
+            app:destination="@id/teacher_list" />
+        <argument
+            android:name="Teacher"
+            app:argType="com.imaginai.languageteacher.Model.Teacher" />
+    </fragment>
+</navigation>
