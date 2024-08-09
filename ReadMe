@@ -1,18 +1,22 @@
 Project Overview
-This project is an Android application designed to demonstrate the MVVM architecture while integrating two different OpenAI APIs and a Google SpeechToText service.
+This project is an Android application currently under development, aimed at creating a language learning tool using SpeechToText, ChatGPT, and TextToSpeech technologies.
 
-Features
-MVVM Architecture Implementation: The project is structured to showcase the MVVM design pattern in an Android environment.
-Google SpeechToText Integration: Converts user speech to text using Google's SpeechToText library. An attempt was made to use OpenAI's SpeechToText, but it didn't perform as expected.
-Teacher Data Class: This is a class that integrates with an AI model to interact with the user. When a teacher is created, a corresponding Teacher object is instantiated.
-Classroom Interaction: When the user navigates to the classroom, the Teacher object is passed as an argument to the fragment. In the classroom, the OpenAI API and several custom services are utilized.
-Threaded AI Conversations: A conversation session is managed via an OpenAI thread, where each user message is treated as a session message. The thread ID and assistant ID are used as parameters when calling the OpenAI.run function. This function returns the assistant's response as text.
-Text-to-Speech Conversion: The response text is converted to speech using the OpenAI text-to-speech service, and this speech is then played to the user through the ClassRoomModelView.
+Project Purpose
+The primary goal of this project is to facilitate language learning by allowing users to engage in conversations with an AI-driven teacher. The application converts spoken language into text, processes the text through ChatGPT to generate responses, and then converts the responses back into speech for the user.
+
+Key Features
+Speech to Text: Converts the user's spoken input into text using Google's SpeechToText service.
+ChatGPT Integration: Processes the user's text input through OpenAI's ChatGPT to generate conversational responses.
+Text to Speech: Converts the generated text responses back into speech using OpenAI's TextToSpeech service, allowing for a seamless conversational experience.
+
+
 How to Run
-Add the environmental variables provided to you to gradle.properties.
+Add the required environmental variables to gradle.properties.
 Clean and rebuild the project.
 Run the application in normal-medium mode.
+
+
 Technical Details
 Android Version: 7.0
-Dependencies: The project includes dependencies on Google's SpeechToText and OpenAI's APIs.
 Permissions: The application requires INTERNET and RECORD_AUDIO permissions to function correctly.
+Use your own openAI API key
